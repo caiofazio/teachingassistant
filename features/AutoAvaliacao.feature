@@ -17,3 +17,15 @@ Scenario: Definir notas de auto-avaliação
     When: O aluno atribui “MA” ou “MANA” ou “MPA” para todas as “Metas”.
     Then: As notas atribuídas a cada meta são registradas no sistema.
 
+Scenario: Auto-avaliação falhou por nota faltando
+    Given: Estou logado no sistema como “Aluno” de login “João” e senha “1234”
+    And: Estou na página “Notas”
+    And: A auto avaliação ainda não foi feita
+    When: Eu seleciono “MA” ou “MANA” ou “MPA” para 3 “Metas” e deixo 2 “Metas” em branco.
+    And: Eu clico em “Aplicar”
+    Then: Eu recebo uma mensagem de erro, pedindo para preencher todas as notas.
+    And: Continuo na página “Notas”.
+Scenario: Definir notas de auto-avaliação com nota faltando
+    Given: O aluno “João” não se auto-avaliou
+    When: O aluno atribui “MA” ou “MANA” ou “MPA” para metade das “Metas”.
+    Then: O sistema não registra as notas atribuidas.
