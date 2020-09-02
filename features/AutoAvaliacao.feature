@@ -27,5 +27,5 @@ Scenario: Auto-avaliação falhou por nota faltando
     And: Continuo na página “Notas”.
 Scenario: Definir notas de auto-avaliação com nota faltando
     Given: O aluno “João” não se auto-avaliou
-    When: O aluno atribui “MA” ou “MANA” ou “MPA” para metade das “Metas”.
-    Then: O sistema não registra as notas atribuidas.
+    When: O aluno atribui “MA” ou “MANA” ou “MPA” para apenas 2 das “Metas”.
+    Then: O sistema não registra as notas atribuidas e envia mensagem de erro.
