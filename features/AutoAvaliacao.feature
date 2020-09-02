@@ -29,3 +29,9 @@ Scenario: Definir notas de auto-avaliação com nota faltando
     Given: O aluno “João” não se auto-avaliou
     When: O aluno atribui “MA” ou “MANA” ou “MPA” para metade das “Metas”.
     Then: O sistema não registra as notas atribuidas.
+Scenario: Verificar notas sem discrepância
+    Given: Estou logado no sistema como “Professor”, de login “Bruno” e senha “1234”
+    When: Eu entro na página “Alunos”.
+    Then: Eu consigo ver a lista dos “Alunos” com suas notas e auto-avaliações 
+    And: Vejo que 5 “Alunos” se auto-avaliaram
+    And: Na parte inferior vejo uma mensagem indicando que não há discrepância.
