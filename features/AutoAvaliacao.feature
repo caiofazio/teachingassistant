@@ -43,4 +43,4 @@ Scenario: Verificar notas com discrepância
     Then: Eu consigo ver a lista dos “Alunos” com suas notas e auto-avaliações 
     And: Vejo que 3 “Alunos” se auto-avaliaram
     And: Na parte inferior vejo uma mensagem indicando há discrepância.
-    And: Na lista consigo ver os “Alunos” que apresentaram discrepância em vermelho.
+    And: Na lista consigo ver os “Alunos” que apresentaram discrepância com background em vermelho.
